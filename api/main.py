@@ -2,6 +2,7 @@ import os
 import uuid
 import asyncio
 import time
+import tempfile
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -35,8 +36,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-UPLOAD_FOLDER = "uploads"
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+# Use temp directory instead of creating uploads folder
+UPLOAD_FOLDER = tempfile.gettempdir()
+print(f"📁 Using upload folder: {UPLOAD_FOLDER}")
 
 # Get API key from environment variable (more secure)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "your-groq-api-key-here")

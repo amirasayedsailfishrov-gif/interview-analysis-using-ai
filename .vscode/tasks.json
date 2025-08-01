@@ -1,0 +1,22 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Start Backend (API)",
+			"command": "python api/run_server.py",
+			"group": "build",
+			"problemMatcher": [],
+			"args": []
+		}
+		,
+		{
+			"type": "shell",
+			"label": "Start Frontend (Next.js)",
+			"command": "pnpm dev",
+			"group": "build",
+			"problemMatcher": [],
+			"args": []
+		}
+	]
+}

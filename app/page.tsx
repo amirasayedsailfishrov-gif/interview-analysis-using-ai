@@ -375,25 +375,25 @@ export default function AIInterviewAnalyzer() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-center justify-items-center">
-              {/* KAUST Academy */}
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+            {/* Ministry of Interior */}
+            <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KAUST_Academy_logo_Full_Color%20%281%29-xnC9ihMz3T603WqvItPY49oYIEbVFj.png"
-                  alt="KAUST Academy"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D8%B4%D8%B9%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-0%D9%A1.jpg-w5GnL3kWaeMNumnZaqOorkvmYfoEDK.jpeg"
+                  alt="Ministry of Interior"
                   className="h-24 w-auto object-contain mb-4"
                 />
-                <p className="text-sm text-gray-600 text-center">أكاديمية كاوست</p>
+                <p className="text-sm text-gray-600 text-center">وزارة الداخلية</p>
               </div>
+            </div>
 
-              {/* Asset 1 */}
+            {/* King Fahad Security College */}
               <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Asset%201-Pr8kNVQ6WBF3Pr6BITyjclP601qHo1.png"
-                  alt="Partner Organization"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kfsc%20logo%20%281%29_kfsc%20logo.jpg-Q4PUIxIRFH1joLo5bYE2d3zCJ8ngLY.jpeg"
+                  alt="King Fahad Security College"
                   className="h-24 w-auto object-contain mb-4"
                 />
-                <p className="text-sm text-gray-600 text-center">شريك استراتيجي</p>
+                <p className="text-sm text-gray-600 text-center">كلية الملك فهد الأمنية</p>
               </div>
 
               {/* KAUST University */}
@@ -406,32 +406,27 @@ export default function AIInterviewAnalyzer() {
                 <p className="text-sm text-gray-600 text-center">جامعة الملك عبدالله للعلوم والتقنية</p>
               </div>
 
-              {/* King Fahad Security College */}
-              <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kfsc%20logo%20%281%29_kfsc%20logo.jpg-Q4PUIxIRFH1joLo5bYE2d3zCJ8ngLY.jpeg"
-                  alt="King Fahad Security College"
-                  className="h-24 w-auto object-contain mb-4"
-                />
-                <p className="text-sm text-gray-600 text-center">كلية الملك فهد الأمنية</p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-center justify-items-center">
 
-              {/* Ministry of Interior */}
+
+              {/* KAUST Academy */}
               <div className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D8%B4%D8%B9%D8%A7%D8%B1%20%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-0%D9%A1.jpg-w5GnL3kWaeMNumnZaqOorkvmYfoEDK.jpeg"
-                  alt="Ministry of Interior"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/KAUST_Academy_logo_Full_Color%20%281%29-xnC9ihMz3T603WqvItPY49oYIEbVFj.png"
+                  alt="KAUST Academy"
                   className="h-24 w-auto object-contain mb-4"
                 />
-                <p className="text-sm text-gray-600 text-center">وزارة الداخلية</p>
+                <p className="text-sm text-gray-600 text-center">أكاديمية كاوست</p>
               </div>
-            </div>
+            
+
+           
+
 
             <div className="text-center mt-16">
               <Button
                 onClick={goToMainPage}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium"
-              >
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium">
                 العودة للصفحة الرئيسية
               </Button>
             </div>
@@ -981,9 +976,9 @@ export default function AIInterviewAnalyzer() {
             </button>
 
             <div className="text-center mb-8">
-              <div className="flex justify-between items-center mb-4">
+              <div className="text-xl font-semibold mb-4 flex items-center justify-center">
                 <h2 className="text-3xl font-bold text-blue-600">
-                  {isArabic ? "📊 نتائج التحليل النفسي والجنائي" : "📊 Psychological & Forensic Analysis Results"}
+                  {isArabic ? " نتائج تحليل المقابله الشخصيه" : " Personal Interview Analysis Results"}
                 </h2>
                 <Button
                   onClick={() => setIsArabic(!isArabic)}
@@ -1001,9 +996,9 @@ export default function AIInterviewAnalyzer() {
 
             {/* Performance Overview */}
             <Card className="p-6 mb-6 bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-blue-500">
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 mr-2 text-blue-600" />
-                {isArabic ? "📈 التقييم العام للأداء" : "📈 Overall Performance Assessment"}
+                {isArabic ? " التقييم العام للأداء" : " Overall Performance Assessment"}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div className="text-center">
@@ -1037,9 +1032,9 @@ export default function AIInterviewAnalyzer() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {/* Sentiment Analysis Chart */}
               <Card className="p-6">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                   <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
-                  {isArabic ? "📊 تحليل المشاعر" : "📊 Sentiment Analysis"}
+                  {isArabic ? " تحليل المشاعر" : " Sentiment Analysis"}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -1079,9 +1074,9 @@ export default function AIInterviewAnalyzer() {
 
               {/* Speech Metrics */}
               <Card className="p-6">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                   <Mic className="w-5 h-5 mr-2 text-blue-600" />
-                  {isArabic ? "🎤 مقاييس الكلام" : "🎤 Speech Metrics"}
+                  {isArabic ? " مقاييس الكلام" : " Speech Metrics"}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
@@ -1105,7 +1100,7 @@ export default function AIInterviewAnalyzer() {
                         {analysisResult.total_words || 0} {isArabic ? "كلمة" : "words"}
                       </div>
                     </div>
-                    <div className="text-2xl">📝</div>
+                    <div className="text-2xl"></div>
                   </div>
                 </div>
               </Card>
@@ -1116,24 +1111,27 @@ export default function AIInterviewAnalyzer() {
               {/* Response Quality Analysis */}
               {analysisResult.response_quality && (
                 <Card className="p-6 border-green-200 bg-green-50">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                     <Award className="w-5 h-5 ml-2 text-green-600" />
-                    {isArabic ? "🏆 جودة الاستجابة" : "🏆 Response Quality"}
+                    {isArabic ? " جودة الاستجابة" : " Response Quality"}
                   </h3>
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center p-3 bg-white rounded-lg">
-                      <div className={isArabic ? "text-right" : "text-left"}>
-                        <div className="font-semibold text-green-700">
-                          {isArabic ? "الدرجة الإجمالية" : "Overall Score"}
+                    <div className="flex flex-row-reverse justify-end items-center p-3 bg-white rounded-lg">
+                      <div className="text-right">
+                        <div className="flex flex-col items-end">
+                          <div className="font-semibold text-green-700 text-right">
+                            {isArabic ? "الدرجة الإجمالية" : "Overall Score"}
+                          </div>
+                          <div className="text-2xl font-bold text-green-600 text-right">
+                            {(analysisResult.response_quality.score * 100).toFixed(0)}%
+                          </div>
                         </div>
-                        <div className="text-2xl font-bold text-green-600">
-                          {(analysisResult.response_quality.score * 100).toFixed(0)}%
-                        </div>
+
                         <div className="text-sm text-gray-600">
                           {isArabic ? analysisResult.response_quality.level : analysisResult.response_quality.level}
                         </div>
                       </div>
-                      <div className="text-4xl">🎯</div>
+                      <div className="text-4xl"></div>
                     </div>
                     
                     {/* Progress Bar */}
@@ -1165,9 +1163,9 @@ export default function AIInterviewAnalyzer() {
               {/* Hesitation Patterns */}
               {analysisResult.hesitation_patterns && (
                 <Card className="p-6 border-orange-200 bg-orange-50">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                     <TrendingDown className="w-5 h-5 ml-2 text-orange-600" />
-                    {isArabic ? "📊 أنماط التردد" : "📊 Hesitation Patterns"}
+                    {isArabic ? " أنماط التردد" : " Hesitation Patterns"}
                   </h3>
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
@@ -1219,9 +1217,9 @@ export default function AIInterviewAnalyzer() {
               {/* Soft Skills Detection */}
               {analysisResult.soft_skills && (
                 <Card className="p-6 border-purple-200 bg-purple-50">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                     <Users className="w-5 h-5 ml-2 text-purple-600" />
-                    {isArabic ? "🤝 المهارات الناعمة" : "🤝 Soft Skills"}
+                    {isArabic ? " المهارات الناعمة" : " Soft Skills"}
                   </h3>
                   <div className="space-y-4">
                     <div className="p-3 bg-white rounded-lg text-center">
@@ -1264,9 +1262,9 @@ export default function AIInterviewAnalyzer() {
               {/* Engagement Level */}
               {analysisResult.engagement_level && (
                 <Card className="p-6 border-blue-200 bg-blue-50">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
-                    <Activity className="w-5 h-5 ml-2 text-blue-600" />
-                    {isArabic ? "🔥 مستوى المشاركة" : "🔥 Engagement Level"}
+                  <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
+                    <Activity className="text-xl font-semibold mb-4 flex items-center justify-center" />
+                    {isArabic ? " مستوى المشاركة" : " Engagement Level"}
                   </h3>
                   <div className="space-y-4">
                     <div className="p-3 bg-white rounded-lg text-center">
@@ -1319,9 +1317,9 @@ export default function AIInterviewAnalyzer() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {/* Flow Chart - Analysis Summary */}
               <Card className="p-6">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                   <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
-                  {isArabic ? "📈 مخطط التحليل التدفقي" : "📈 Analysis Flow Chart"}
+                  {isArabic ? " مخطط التحليل التدفقي" : " Analysis Flow Chart"}
                 </h3>
                 <div className="space-y-4">
                   {/* Flow Steps */}
@@ -1332,7 +1330,7 @@ export default function AIInterviewAnalyzer() {
                         <div className="font-semibold text-blue-700">
                           {isArabic ? "استخراج الصوت" : "Audio Extraction"}
                         </div>
-                        <div className="text-sm text-gray-600">✅ {isArabic ? "مكتمل" : "Completed"}</div>
+                        <div className="text-sm text-gray-600"> {isArabic ? "مكتمل" : "Completed"}</div>
                       </div>
                     </div>
                     
@@ -1342,7 +1340,7 @@ export default function AIInterviewAnalyzer() {
                         <div className="font-semibold text-green-700">
                           {isArabic ? "تحويل الكلام" : "Speech Recognition"}
                         </div>
-                        <div className="text-sm text-gray-600">✅ {analysisResult.total_words} {isArabic ? "كلمة" : "words"}</div>
+                        <div className="text-sm text-gray-600"> {analysisResult.total_words} {isArabic ? "كلمة" : "words"}</div>
                       </div>
                     </div>
                     
@@ -1352,7 +1350,7 @@ export default function AIInterviewAnalyzer() {
                         <div className="font-semibold text-purple-700">
                           {isArabic ? "التحليل النفسي" : "Psychological Analysis"}
                         </div>
-                        <div className="text-sm text-gray-600">✅ {isArabic ? "تم" : "Done"}</div>
+                        <div className="text-sm text-gray-600"> {isArabic ? "تم" : "Done"}</div>
                       </div>
                     </div>
                     
@@ -1362,7 +1360,7 @@ export default function AIInterviewAnalyzer() {
                         <div className="font-semibold text-orange-700">
                           {isArabic ? "إنشاء التقرير" : "Report Generation"}
                         </div>
-                        <div className="text-sm text-gray-600">✅ {isArabic ? "جاهز" : "Ready"}</div>
+                        <div className="text-sm text-gray-600"> {isArabic ? "جاهز" : "Ready"}</div>
                       </div>
                     </div>
                   </div>
@@ -1371,19 +1369,19 @@ export default function AIInterviewAnalyzer() {
 
               {/* Bar Chart - Skills Overview */}
               <Card className="p-6">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                   <PieChart className="w-5 h-5 mr-2 text-green-600" />
-                  {isArabic ? "📊 الرسم البياني الإجمالي" : "📊 Overall Bar Chart"}
+                  {isArabic ? " الرسم البياني الإجمالي" : " Overall Bar Chart"}
                 </h3>
                 <div className="space-y-4">
                   {/* Analysis Scores Bar Chart */}
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center">
+                    <div className="flex flex-row-reverse justify-end items-center text-right">
+                      <span className="text-sm font-bold text-green-600 ml-2">
+                        {analysisResult.response_quality ? (analysisResult.response_quality.score * 100).toFixed(0) + '%' : '0%'}
+                      </span>
                       <span className="text-sm font-medium text-gray-700">
                         {isArabic ? "جودة الاستجابة" : "Response Quality"}
-                      </span>
-                      <span className="text-sm font-bold text-green-600">
-                        {analysisResult.response_quality ? (analysisResult.response_quality.score * 100).toFixed(0) + '%' : '0%'}
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-3">
@@ -1442,52 +1440,13 @@ export default function AIInterviewAnalyzer() {
               </Card>
             </div>
 
-            {/* Comprehensive Arabic Report */}
-            {analysisResult.comprehensive_report && (
-              <div className="space-y-6">
-                {/* Executive Summary */}
-                <Card className="p-6 bg-gradient-to-r from-green-50 to-blue-50 border-r-4 border-green-500">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
-                    <FileText className="w-5 h-5 ml-2 text-green-600" />
-                    📋 الملخص التنفيذي
-                  </h3>
-                  <div className="text-right whitespace-pre-line text-gray-700">
-                    {analysisResult.comprehensive_report.executive_summary}
-                  </div>
-                </Card>
-
-                {/* Speech Pattern Analysis */}
-                <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
-                    <Mic className="w-5 h-5 ml-2 text-blue-600" />
-                    🎤 تحليل أنماط الكلام
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-blue-50 rounded-lg text-right">
-                      <h4 className="font-semibold text-blue-700 mb-2">تحليل سرعة الكلام</h4>
-                      <p className="text-sm text-gray-700">{analysisResult.comprehensive_report.speech_pattern_analysis?.rate_analysis}</p>
-                    </div>
-                    <div className="p-4 bg-green-50 rounded-lg text-right">
-                      <h4 className="font-semibold text-green-700 mb-2">التقييم النفسي</h4>
-                      <div className="space-y-1">
-                        {analysisResult.comprehensive_report.speech_pattern_analysis?.psychological_indicators?.map((indicator: string, index: number) => (
-                          <p key={index} className="text-sm text-gray-700">• {indicator}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-4 p-4 bg-yellow-50 rounded-lg text-right">
-                    <h4 className="font-semibold text-yellow-700 mb-2">التقييم الجنائي</h4>
-                    <p className="text-sm text-gray-700">{analysisResult.comprehensive_report.speech_pattern_analysis?.forensic_assessment}</p>
-                  </div>
-                </Card>
 
                 {/* Word Repetition Analysis */}
                 {analysisResult.comprehensive_report.repetition_analysis && (
                   <Card className="p-6 border-purple-200 bg-purple-50">
-                    <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
+                    <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                       <RotateCcw className="w-5 h-5 ml-2 text-purple-600" />
-                      🔄 تحليل تكرار الكلمات
+                       تحليل تكرار الكلمات
                     </h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-white rounded-lg text-right">
@@ -1507,27 +1466,16 @@ export default function AIInterviewAnalyzer() {
                         </div>
                       )}
 
-                      {analysisResult.comprehensive_report.repetition_analysis.excessive_words?.length > 0 && (
-                        <div className="p-4 bg-red-50 rounded-lg text-right border border-red-200">
-                          <h4 className="font-semibold text-red-700 mb-2">كلمات مكررة بإفراط</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {analysisResult.comprehensive_report.repetition_analysis.excessive_words.map(([word, count]: [string, number], index: number) => (
-                              <span key={index} className="bg-red-100 text-red-700 px-2 py-1 rounded text-sm">
-                                {word} ({count}x)
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                    
                     </div>
                   </Card>
                 )}
 
                 {/* Emotional Stability */}
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                     <Heart className="w-5 h-5 ml-2 text-red-600" />
-                    💖 الاستقرار العاطفي
+                     الاستقرار العاطفي
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="p-4 bg-green-50 rounded-lg text-right">
@@ -1553,9 +1501,9 @@ export default function AIInterviewAnalyzer() {
 
                 {/* Psychological Profile */}
                 <Card className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 border-r-4 border-purple-500">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                     <Brain className="w-5 h-5 ml-2 text-purple-600" />
-                    🧠 الملف النفسي الشامل
+                     تحليل الشخصيه الشامل
                   </h3>
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1587,7 +1535,7 @@ export default function AIInterviewAnalyzer() {
                         <h4 className="font-semibold text-yellow-700 mb-2">المؤشرات السلوكية</h4>
                         <div className="space-y-1">
                           {analysisResult.comprehensive_report.psychological_profile.behavioral_indicators.map((indicator: string, index: number) => (
-                            <p key={index} className="text-sm text-gray-700">⚠️ {indicator}</p>
+                            <p key={index} className="text-sm text-gray-700"> {indicator}</p>
                           ))}
                         </div>
                       </div>
@@ -1595,97 +1543,19 @@ export default function AIInterviewAnalyzer() {
                   </div>
                 </Card>
 
-                {/* Forensic Analysis */}
-                <Card className="p-6 border-red-200 bg-red-50">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
-                    <Shield className="w-5 h-5 ml-2 text-red-600" />
-                    🛡️ التحليل الجنائي
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-white rounded-lg text-right">
-                      <h4 className="font-semibold text-red-700 mb-2">تقييم المصداقية</h4>
-                      <p className="text-gray-700">{analysisResult.comprehensive_report.forensic_analysis?.credibility_assessment}</p>
-                    </div>
-                    <div className="p-4 bg-white rounded-lg text-right">
-                      <h4 className="font-semibold text-red-700 mb-2">مؤشرات الخداع</h4>
-                      <p className="text-gray-700">{analysisResult.comprehensive_report.forensic_analysis?.deception_indicators}</p>
-                    </div>
-                  </div>
-                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-white rounded-lg text-right">
-                      <h4 className="font-semibold text-red-700 mb-2">مناسبة المقابلة</h4>
-                      <p className="text-gray-700">{analysisResult.comprehensive_report.forensic_analysis?.interview_suitability}</p>
-                    </div>
-                    <div className="p-4 bg-white rounded-lg text-right">
-                      <h4 className="font-semibold text-red-700 mb-2">عوامل المخاطر</h4>
-                      <div className="space-y-1">
-                        {analysisResult.comprehensive_report.forensic_analysis?.risk_factors?.map((risk: string, index: number) => (
-                          <p key={index} className="text-sm text-gray-700">⚠️ {risk}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-
-                {/* Final Recommendations */}
-                <Card className="p-6 bg-gradient-to-r from-green-50 to-teal-50 border-r-4 border-green-500">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center text-right">
-                    <CheckCircle className="w-5 h-5 ml-2 text-green-600" />
-                    ✅ التوصيات النهائية
-                  </h3>
-                  <div className="space-y-4">
-                    {analysisResult.comprehensive_report.final_recommendations?.psychological_development?.length > 0 && (
-                      <div className="p-4 bg-white rounded-lg text-right">
-                        <h4 className="font-semibold text-green-700 mb-2">التطوير النفسي</h4>
-                        <div className="space-y-1">
-                          {analysisResult.comprehensive_report.final_recommendations.psychological_development.map((rec: string, index: number) => (
-                            <p key={index} className="text-sm text-gray-700">• {rec}</p>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {analysisResult.comprehensive_report.final_recommendations?.communication_improvement?.length > 0 && (
-                      <div className="p-4 bg-white rounded-lg text-right">
-                        <h4 className="font-semibold text-green-700 mb-2">تحسين التواصل</h4>
-                        <div className="space-y-1">
-                          {analysisResult.comprehensive_report.final_recommendations.communication_improvement.map((rec: string, index: number) => (
-                            <p key={index} className="text-sm text-gray-700">• {rec}</p>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="p-4 bg-blue-50 rounded-lg text-right">
-                        <h4 className="font-semibold text-blue-700 mb-2">المناسبة المهنية</h4>
-                        <p className="text-gray-700">{analysisResult.comprehensive_report.final_recommendations?.professional_suitability}</p>
-                      </div>
-                      <div className="p-4 bg-purple-50 rounded-lg text-right">
-                        <h4 className="font-semibold text-purple-700 mb-2">اقتراحات المتابعة</h4>
-                        <div className="space-y-1">
-                          {analysisResult.comprehensive_report.final_recommendations?.follow_up_suggestions?.map((suggestion: string, index: number) => (
-                            <p key={index} className="text-sm text-gray-700">• {suggestion}</p>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            )}
+          
 
             {/* Personality Analysis Report */}
             <Card className="p-6 mb-6 bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-500">
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                 <Brain className="w-5 h-5 mr-2 text-purple-600" />
-                {isArabic ? "🧠 تقرير تحليل الشخصية" : "🧠 Personality Analysis Report"}
+                {isArabic ? " تقرير تحليل الشخصية" : " Personality Analysis Report"}
               </h3>
               
               <div className="space-y-4">
                 <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-semibold text-purple-700 mb-2">
-                    {isArabic ? "📍 نمط الشخصية المهيمن" : "📍 Dominant Personality Pattern"}
+                  <h4 className="font-semibold text-purple-700 mb-2 text-right">
+                    {isArabic ? " نمط الشخصية المهيمن" : " Dominant Personality Pattern"}
                   </h4>
                   <p className="text-gray-700">
                     {isArabic 
@@ -1696,26 +1566,26 @@ export default function AIInterviewAnalyzer() {
                 </div>
                 
                 <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-semibold text-purple-700 mb-2">
-                    {isArabic ? "🎯 المؤشرات السلوكية" : "🎯 Behavioral Indicators"}
+                  <h4 className="font-semibold text-purple-700 mb-2 text-right">
+                    {isArabic ? " المؤشرات السلوكية" : " Behavioral Indicators"}
                   </h4>
                   <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start">
-                      <span className="text-green-500 mr-2">✓</span>
+                    <li className="flex items-start justify-end">
+                      <span className="text-green-500 mr-2"></span>
                       {isArabic 
                         ? `التواصل: ${(analysisResult.speech_rate_wps || 0) > 1.5 ? 'ممتاز - يتحدث بوضوح وثقة' : 'جيد - قد يحتاج لمزيد من الممارسة'}`
                         : `Communication: ${(analysisResult.speech_rate_wps || 0) > 1.5 ? 'Excellent - speaks clearly and confidently' : 'Good - may need more practice'}`
                       }
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-500 mr-2">✓</span>
+                    <li className="flex items-start justify-end">
+                      <span className="text-blue-500 mr-2"></span>
                       {isArabic 
                         ? `الاستقرار العاطفي: ${parseInt(analysisResult.sentiment?.negative || '0') < 20 ? 'مستقر عاطفياً' : 'يحتاج لإدارة الضغوط'}`
                         : `Emotional Stability: ${parseInt(analysisResult.sentiment?.negative || '0') < 20 ? 'emotionally stable' : 'needs stress management'}`
                       }
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-500 mr-2">✓</span>
+                    <li className="flex items-start justify-end">
+                      <span className="text-purple-500 mr-2"></span>
                       {isArabic 
                         ? `التفكير التحليلي: ${(analysisResult.total_words || 0) > 100 ? 'قادر على التعبير بتفصيل' : 'يفضل الإيجاز'}`
                         : `Analytical Thinking: ${(analysisResult.total_words || 0) > 100 ? 'capable of detailed expression' : 'prefers brevity'}`
@@ -1725,10 +1595,10 @@ export default function AIInterviewAnalyzer() {
                 </div>
                 
                 <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-semibold text-purple-700 mb-2">
-                    {isArabic ? "💡 التوصيات للتطوير" : "💡 Development Recommendations"}
+                  <h4 className="font-semibold text-purple-700 mb-2 text-right">
+                    {isArabic ? " التوصيات للتطوير" : " Development Recommendations"}
                   </h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 text-right">
                     <li>• {isArabic ? "العمل على تنويع نبرة الصوت لجذب انتباه أفضل" : "Work on voice modulation for better engagement"}</li>
                     <li>• {isArabic ? "تطوير مهارات القصص لجعل الحديث أكثر تشويقاً" : "Develop storytelling skills for more engaging communication"}</li>
                     <li>• {isArabic ? "ممارسة تقنيات الاسترخاء لتحسين الأداء تحت الضغط" : "Practice relaxation techniques for better performance under pressure"}</li>
@@ -1739,9 +1609,9 @@ export default function AIInterviewAnalyzer() {
 
             {/* Frequent Words with Arabic Translation */}
             <Card className="p-6 mb-6">
-              <h3 className="text-xl font-semibold mb-4 flex items-center">
+              <h3 className="text-xl font-semibold mb-4 flex items-center justify-end">
                 <Target className="w-5 h-5 mr-2 text-blue-600" />
-                {isArabic ? "🔤 الكلمات الأكثر تكراراً مع المعاني" : "🔤 Most Frequent Words with Meanings"}
+                {isArabic ? " الكلمات الأكثر تكراراً مع المعاني" : " Most Frequent Words with Meanings"}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {analysisResult.frequent_words?.slice(0, 8).map(([word, count]: [string, number], index: number) => (
@@ -1768,15 +1638,15 @@ export default function AIInterviewAnalyzer() {
             {/* Bilingual Transcription */}
             {analysisResult.translation && (
               <Card className="p-6 mb-6">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                <h3 className="text-xl font-semibold mb-4 flex items-center justify-center">
                   <Globe className="w-5 h-5 mr-2 text-blue-600" />
-                  {isArabic ? "📝 النص الكامل (عربي - إنجليزي)" : "📝 Full Transcription (Arabic - English)"}
+                  {isArabic ? " النص الكامل (عربي - إنجليزي)" : " Full Transcription (Arabic - English)"}
                 </h3>
                 <div className="max-h-60 overflow-y-auto space-y-3">
                   {analysisResult.translation.map((segment: any, index: number) => (
                     <div key={index} className="border-l-4 border-blue-300 pl-4 py-2">
                       <div className="text-xs text-gray-500 mb-2">
-                        ⏱️ {segment.start?.toFixed(2)}s - {segment.end?.toFixed(2)}s
+                         {segment.start?.toFixed(2)}s - {segment.end?.toFixed(2)}s
                       </div>
                       <div className="text-sm mb-2 p-2 bg-blue-50 rounded text-right">
                         <strong>{isArabic ? "العربي:" : "Arabic:"}</strong> {segment.arabic_text || segment.text}
@@ -1795,7 +1665,7 @@ export default function AIInterviewAnalyzer() {
               <Card className="p-6 mb-6 border-red-200 bg-red-50">
                 <h3 className="text-xl font-semibold mb-4 flex items-center text-red-600">
                   <AlertCircle className="w-5 h-5 mr-2" />
-                  {isArabic ? "⚠️ تحذير: كلمات حساسة" : "⚠️ Warning: Sensitive Content Detected"}
+                  {isArabic ? " تحذير: كلمات حساسة" : " Warning: Sensitive Content Detected"}
                 </h3>
                 <div className="space-y-2">
                   {analysisResult.sensitive_words.map((alert: any, index: number) => (
@@ -1820,7 +1690,7 @@ export default function AIInterviewAnalyzer() {
                 }}
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-3"
               >
-                📄 {isArabic ? "تحميل التقرير" : "Download Report"}
+                 {isArabic ? "تحميل التقرير" : "Download Report"}
               </Button>
               <Button
                 onClick={() => {

@@ -1,26 +1,37 @@
+
 import re
 from collections import Counter
 from textblob import TextBlob
 from deep_translator import GoogleTranslator
 import math
+import speech_recognition as sr
+import librosa
+import numpy as np
+import tempfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+
+def _translate_and_analyze(text):
+    try:
+        translated = GoogleTranslator(source='ar', target='en').translate(text)
+        polarity = TextBlob(translated).sentiment.polarity
+        if polarity > 0.1:
+            return "positive"
+        elif polarity < -0.1:
+            return "negative"
+        else:
+            return "neutral"
+    except Exception:
+        return "neutral"
 
 def analyze_sentiment(transcript):
     sentiments = {"positive": 0, "neutral": 0, "negative": 0}
     total = len(transcript)
-
-    for item in transcript:
-        try:
-            translated = GoogleTranslator(source='ar', target='en').translate(item['text'])
-            polarity = TextBlob(translated).sentiment.polarity
-            if polarity > 0.1:
-                sentiments["positive"] += 1
-            elif polarity < -0.1:
-                sentiments["negative"] += 1
-            else:
-                sentiments["neutral"] += 1
-        except:
-            sentiments["neutral"] += 1
-
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = [executor.submit(_translate_and_analyze, item['text']) for item in transcript]
+        for future in as_completed(futures):
+            result = future.result()
+            sentiments[result] += 1
     for k in sentiments:
         sentiments[k] = f"{round((sentiments[k] / total) * 100, 2)}%"
     return sentiments
@@ -960,7 +971,7 @@ def analyze_all(transcript):
     """التحليل الشامل مع جميع المكونات الجديدة"""
     # تحويل النص إلى نص مفرد للدوال الجديدة
     combined_text = " ".join([item['text'] for item in transcript])
-    
+
     basic_analysis = {
         "sentiment": analyze_sentiment(transcript),
         "total_words": count_total_words(transcript),
@@ -969,20 +980,85 @@ def analyze_all(transcript):
         "sensitive_words": detect_sensitive_words(transcript),
         "translation": translate_to_english(transcript)
     }
-    
+
     # إضافة التحليلات المتقدمة
     basic_analysis["psychological_analysis"] = analyze_psychological_patterns(transcript)
     basic_analysis["deception_analysis"] = analyze_deception_indicators(transcript)
     basic_analysis["personality_traits"] = analyze_personality_traits(transcript)
     basic_analysis["word_repetition_analysis"] = analyze_word_repetition(transcript)
-    
+
     # إضافة التحليلات الجديدة باستخدام النص المدمج
     basic_analysis["response_quality"] = evaluate_response_quality(combined_text)
     basic_analysis["hesitation_patterns"] = analyze_hesitation_patterns(combined_text)
     basic_analysis["soft_skills"] = detect_soft_skills(combined_text)
     basic_analysis["engagement_level"] = measure_engagement_level(combined_text)
-    
+
+    # ميزات جديدة
+    basic_analysis["letter_pronunciation"] = analyze_letter_pronunciation()
+    basic_analysis["filler_and_repeated_words"] = analyze_filler_and_repeated_words(combined_text)
+    basic_analysis["pitch_analysis"] = analyze_pitch_and_waveform()
+
     # التقرير الشامل
     basic_analysis["comprehensive_report"] = generate_comprehensive_report(basic_analysis, transcript)
-    
+
     return basic_analysis
+
+# تحليل دقّة مخارج الحروف وجودة النطق (حرف الراء والسين والقاف)
+def analyze_letter_pronunciation(audio_path=None):
+    try:
+        recognizer = sr.Recognizer()
+        # Use temp.wav if no path provided
+        if not audio_path:
+            audio_path = tempfile.gettempdir() + "/temp.wav"
+        with sr.AudioFile(audio_path) as source:
+            audio_data = recognizer.record(source)
+        text = recognizer.recognize_google(audio_data, language='ar-EG')
+        target_letters = ['ر', 'س', 'ق']
+        positions = {'بداية': [], 'وسط': [], 'نهاية': []}
+        words = text.split()
+        for word in words:
+            for letter in target_letters:
+                if word.startswith(letter):
+                    positions['بداية'].append(word)
+                elif word.endswith(letter):
+                    positions['نهاية'].append(word)
+                elif letter in word:
+                    positions['وسط'].append(word)
+        return {
+            "الكلمات التي تبدأ بالحروف": positions['بداية'],
+            "الكلمات التي تحتوي الحروف في الوسط": positions['وسط'],
+            "الكلمات التي تنتهي بالحروف": positions['نهاية']
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
+# تحليل التأتأة واللزامات اللغوية
+def analyze_filler_and_repeated_words(text):
+    filler_words = ["يعني", "أمم", "مثلاً", "آآه", "ها"]
+    word_freq = {}
+    for word in text.split():
+        word_freq[word] = word_freq.get(word, 0) + 1
+    repeated_words = {w: c for w, c in word_freq.items() if c > 1}
+    fillers_found = [w for w in text.split() if w in filler_words]
+    return {
+        "كلمات حشو": fillers_found,
+        "كلمات مكررة": repeated_words
+    }
+
+# خصائص الصوت ونغماته
+def analyze_pitch_and_waveform(audio_path=None):
+    try:
+        # Use temp.wav if no path provided
+        if not audio_path:
+            audio_path = tempfile.gettempdir() + "/temp.wav"
+        y, sr_ = librosa.load(audio_path)
+        pitches, magnitudes = librosa.piptrack(y=y, sr=sr_)
+        pitch_values = pitches[magnitudes > np.median(magnitudes)]
+        avg_pitch = float(np.mean(pitch_values)) if len(pitch_values) > 0 else 0.0
+        std_pitch = float(np.std(pitch_values)) if len(pitch_values) > 0 else 0.0
+        return {
+            "معدل الحدة": round(avg_pitch, 2),
+            "انحراف النغمة": round(std_pitch, 2)
+        }
+    except Exception as e:
+        return {"error": str(e)}
